@@ -1,0 +1,12 @@
+{
+    "connector": {
+      "name": "local"
+    },
+    "formatters": ["html"],
+    "hints": {
+      "meta-viewport": "error",
+      "css-prefix-order": "warning",
+      "compatible-vendor-prefixes": "off",
+      "prefix-order": "off"
+    }
+  }

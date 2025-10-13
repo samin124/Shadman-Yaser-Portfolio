@@ -1,0 +1,31 @@
+{
+    "about": {
+      "name": "John Doe",
+      "title": "Full Stack Developer",
+      "description": "Passionate about creating innovative web solutions with modern technologies. Specialized in React, Node.js, and cloud technologies.",
+      "image": "/assets/images/profile.jpg",
+      "email": "john.doe@example.com",
+      "github": "https://github.com/johndoe",
+      "linkedin": "https://linkedin.com/in/johndoe"
+    },
+    "projects": [
+      {
+        "id": 1,
+        "title": "E-Commerce Platform",
+        "description": "A full-stack e-commerce solution with React, Node.js, and MongoDB",
+        "image": "/assets/images/project1.jpg",
+        "technologies": ["React", "Node.js", "MongoDB", "Express"],
+        "liveUrl": "https://demo-ecommerce.com",
+        "githubUrl": "https://github.com/johndoe/ecommerce",
+        "features": ["User authentication", "Product catalog", "Shopping cart", "Payment integration"]
+      }
+    ],
+    "skills": [
+      {
+        "name": "React",
+        "level": 90,
+        "category": "Frontend",
+        "projects": ["E-Commerce Platform", "Task Management App"]
+      }
+    ]
+  }

@@ -1,0 +1,133 @@
+{
+    "about": {
+      "name": "John Doe",
+      "title": "Full Stack Developer",
+      "description": "Passionate full-stack developer with 3+ years of experience creating innovative web solutions. Specialized in React, Node.js, and modern cloud technologies.",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      "email": "john.doe@example.com",
+      "github": "https://github.com/johndoe",
+      "linkedin": "https://linkedin.com/in/johndoe",
+      "location": "New York, NY",
+      "availability": "Available for new opportunities",
+      "resumeUrl": "/assets/pdfs/resume.pdf"
+    },
+    "projects": [
+      {
+        "id": 1,
+        "title": "E-Commerce Platform",
+        "description": "A full-stack e-commerce solution with React, Node.js, and MongoDB featuring user authentication, product management, and payment integration.",
+        "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+        "technologies": ["React", "Node.js", "MongoDB", "Express", "Stripe"],
+        "liveUrl": "https://demo-ecommerce.com",
+        "githubUrl": "https://github.com/johndoe/ecommerce",
+        "features": ["User authentication", "Product catalog", "Shopping cart", "Payment integration", "Admin dashboard"]
+      },
+      {
+        "id": 2,
+        "title": "Task Management App",
+        "description": "A collaborative task management application with real-time updates, team collaboration features, and progress tracking.",
+        "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+        "technologies": ["React", "Firebase", "Tailwind CSS", "Framer Motion"],
+        "liveUrl": "https://taskapp.demo.com",
+        "githubUrl": "https://github.com/johndoe/taskapp",
+        "features": ["Real-time updates", "Team collaboration", "Progress tracking", "File attachments"]
+      }
+    ],
+    "skills": [
+      {
+        "name": "React",
+        "level": 90,
+        "category": "Frontend",
+        "icon": "⚛️",
+        "projects": ["E-Commerce Platform", "Task Management App"]
+      },
+      {
+        "name": "Node.js",
+        "level": 85,
+        "category": "Backend",
+        "icon": "🟢",
+        "projects": ["E-Commerce Platform", "API Services"]
+      },
+      {
+        "name": "JavaScript",
+        "level": 95,
+        "category": "Languages",
+        "icon": "📜",
+        "projects": ["All Projects"]
+      },
+      {
+        "name": "TypeScript",
+        "level": 80,
+        "category": "Languages",
+        "icon": "🔷",
+        "projects": ["Enterprise Applications"]
+      },
+      {
+        "name": "Python",
+        "level": 75,
+        "category": "Languages",
+        "icon": "🐍",
+        "projects": ["Data Analysis", "Automation Scripts"]
+      }
+    ],
+    "experience": [
+      {
+        "id": 1,
+        "position": "Senior Full Stack Developer",
+        "company": "Tech Solutions Inc.",
+        "period": "2022 - Present",
+        "location": "Remote",
+        "description": "Led development of multiple web applications using React and Node.js. Implemented CI/CD pipelines and improved application performance by 40%.",
+        "technologies": ["React", "Node.js", "AWS", "Docker", "MongoDB"]
+      },
+      {
+        "id": 2,
+        "position": "Frontend Developer",
+        "company": "Digital Agency Co.",
+        "period": "2020 - 2022",
+        "location": "New York, NY",
+        "description": "Developed responsive web applications for various clients. Collaborated with design teams to implement pixel-perfect UI components.",
+        "technologies": ["React", "JavaScript", "CSS3", "Figma"]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "Bachelor of Science in Computer Science",
+        "institution": "University of Technology",
+        "period": "2016 - 2020",
+        "location": "Boston, MA",
+        "description": "Graduated with honors. Focused on software engineering, algorithms, and web technologies.",
+        "gpa": "3.8/4.0"
+      }
+    ],
+    "research": [
+      {
+        "id": 1,
+        "title": "Machine Learning for Web Security",
+        "description": "Research on applying machine learning algorithms to detect and prevent web security threats in real-time.",
+        "conference": "International Conference on Web Security",
+        "year": "2023",
+        "type": "Conference Paper",
+        "status": "Published",
+        "pdfUrl": "#",
+        "link": "https://example.com/research1"
+      }
+    ],
+    "competitions": [
+      {
+        "id": 1,
+        "title": "National Hackathon 2023",
+        "description": "Developed an AI-powered solution for environmental monitoring in 48-hour hackathon.",
+        "organizer": "Tech Community",
+        "date": "March 2023",
+        "position": "1st Place",
+        "certificateUrl": "#"
+      }
+    ],
+    "contact": {
+      "email": "john.doe@example.com",
+      "phone": "+1 (555) 123-4567",
+      "location": "New York, NY, USA"
+    }
+  }

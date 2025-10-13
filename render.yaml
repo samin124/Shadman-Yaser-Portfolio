@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: portfolio
+    env: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: EMAIL_USER
+        value: your-email@gmail.com
+      - key: EMAIL_PASS
+        value: your-app-password
+      - key: CONTACT_EMAIL
+        value: your-contact-email@gmail.com
+      - key: JWT_SECRET
+        value: your-jwt-secret-key
