@@ -328,9 +328,9 @@ const portfolioData = {
     // Add more courses as needed
   ],
   contact: {
-    email: "your.email@example.com", // Change to your email
-    phone: "+1 (555) 123-4567", // Change to your phone
-    location: "Your City, Country" // Change to your location
+    email: "shadmanyaser890@gmail.com", // Change to your email
+    phone: "01622997885", // Change to your phone
+    location: "Chattogram, Bangladesh" // Change to your location
   }
 }
 

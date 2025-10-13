@@ -5,6 +5,11 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
-    host: true
+    host: true,
+    allowedHosts: [
+      'shadman-yaser-portfolio.onrender.com',
+      'localhost',
+      '127.0.0.1'
+    ]
   }
 })
