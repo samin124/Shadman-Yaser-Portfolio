@@ -7,7 +7,7 @@ export default defineConfig({
     port: 5173,
     host: true,
     allowedHosts: [
-      'shadman-yaser-portfolio.onrender.com',
+      'shadman-yaser-portfolio-new.onrender.com',
       'localhost',
       '127.0.0.1'
     ]
