@@ -2,10 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Override Tailwind's -webkit-text-size-adjust to fix compatibility warning */
+/* Theme Variables */
+:root {
+  /* Light Theme (default) */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8fafc;
+  --color-bg-accent: #3b82f6;
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #6b7280;
+  --color-border: #e5e7eb;
+  --color-glass: rgba(255, 255, 255, 0.1);
+  --color-glass-dark: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --color-bg-primary: #0f172a;
+  --color-bg-secondary: #1e293b;
+  --color-bg-accent: #60a5fa;
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #cbd5e1;
+  --color-border: #334155;
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-glass-dark: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="preset"] {
+  /* Customize these colors to match your preset theme */
+  --color-bg-primary: #1a1b26;
+  --color-bg-secondary: #24283b;
+  --color-bg-accent: #7aa2f7;
+  --color-text-primary: #c0caf5;
+  --color-text-secondary: #a9b1d6;
+  --color-border: #414868;
+  --color-glass: rgba(122, 162, 247, 0.1);
+  --color-glass-dark: rgba(0, 0, 0, 0.4);
+}
+
+/* Override Tailwind's -webkit-text-size-adjust */
 html {
   text-size-adjust: none !important;
-  -webkit-text-size-adjust: none !important; /* keep for older Safari */
+  -webkit-text-size-adjust: none !important;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
 }
 
 @layer base {
@@ -13,6 +51,7 @@ html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   body {
@@ -20,11 +59,13 @@ html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
   }
 
   button:focus-visible,
   a:focus-visible {
-    outline: 2px solid #3b82f6;
+    outline: 2px solid var(--color-bg-accent);
     outline-offset: 2px;
   }
 }
@@ -45,23 +86,23 @@ html {
   }
 
   .glass {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--color-glass);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--color-border);
   }
 
   .glass-dark {
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--color-glass-dark);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--color-border);
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--color-bg-accent) 0%, #764ba2 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: #667eea;
+    color: var(--color-bg-accent);
   }
 
   .hover-lift {
@@ -70,7 +111,28 @@ html {
 
   .hover-lift:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Theme-specific utility classes */
+  .theme-bg-primary {
+    background-color: var(--color-bg-primary);
+  }
+
+  .theme-bg-secondary {
+    background-color: var(--color-bg-secondary);
+  }
+
+  .theme-text-primary {
+    color: var(--color-text-primary);
+  }
+
+  .theme-text-secondary {
+    color: var(--color-text-secondary);
+  }
+
+  .theme-border {
+    border-color: var(--color-border);
   }
 }
 
@@ -86,10 +148,10 @@ html {
 
   @keyframes glow {
     0%, 100% { 
-      box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+      box-shadow: 0 0 10px color-mix(in srgb, var(--color-bg-accent) 30%, transparent);
     }
     50% { 
-      box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+      box-shadow: 0 0 20px color-mix(in srgb, var(--color-bg-accent) 50%, transparent);
     }
   }
 
@@ -113,20 +175,20 @@ html {
   }
 }
 
-/* Custom scrollbar for Webkit browsers only */
+/* Custom scrollbar for Webkit browsers */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-glass);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3b82f6;
+  background: var(--color-bg-accent);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
+  background: color-mix(in srgb, var(--color-bg-accent) 80%, black);
 }

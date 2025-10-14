@@ -77,7 +77,7 @@ const Experience = ({ data = [] }) => {
                             </h3>
                             <div className="flex items-center gap-2 text-gray-600">
                               <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 flex-shrink-0" />
-                              <span className="text-xs sm:text-sm">Full-time Position</span>
+                              <span className="text-xs sm:text-sm">Part-time Position</span>
                             </div>
                           </div>
 

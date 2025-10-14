@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Code, Database, Palette, Cloud, Server, Smartphone, Zap, Rocket, Cpu, Globe, CheckCircle, Sparkles, Target, Layers, Shield, Clock, Zap as Lightning } from 'lucide-react'
+import { Code, Database, Palette, Cloud, Server, Smartphone, Zap, Rocket, Cpu, Globe, CheckCircle, Sparkles, Target, Layers, Shield, Clock } from 'lucide-react'
 
 const Skills = ({ data = [] }) => {
   const [selectedSkill, setSelectedSkill] = useState(null)
@@ -133,10 +133,10 @@ const Skills = ({ data = [] }) => {
           ))}
         </motion.div>
 
-        {/* Skills Grid with AnimatePresence for smooth transitions */}
+        {/* Skills Grid */}
         <AnimatePresence mode="wait">
           <motion.div
-            key={activeCategory} // This ensures re-animation when category changes
+            key={activeCategory}
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -147,7 +147,7 @@ const Skills = ({ data = [] }) => {
               <motion.div
                 key={skill.name}
                 variants={itemVariants}
-                layout // Add layout animation for smooth transitions
+                layout
                 whileHover={{ 
                   y: -8,
                   scale: 1.02,
@@ -158,17 +158,25 @@ const Skills = ({ data = [] }) => {
                 onMouseLeave={() => setHoveredSkill(null)}
                 onClick={() => setSelectedSkill(skill)}
               >
-                {/* Static Background Gradient - Removed animation that caused conflicts */}
+                {/* Static Background Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                {/* Skill Header */}
+                {/* Skill Header - FIXED ICON RENDERING */}
                 <div className="flex items-center justify-between mb-4 relative z-10">
                   <motion.div 
                     className="w-14 h-14 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-indigo-200/50"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <span className="text-2xl">{skill.icon}</span>
+                    {skill.icon.startsWith('http') ? (
+                      <img 
+                        src={skill.icon} 
+                        alt={skill.name}
+                        className="w-8 h-8 object-contain"
+                      />
+                    ) : (
+                      <span className="text-2xl">{skill.icon}</span>
+                    )}
                   </motion.div>
                   
                   {/* Experience Badge */}
@@ -240,24 +248,7 @@ const Skills = ({ data = [] }) => {
           </motion.div>
         </AnimatePresence>
 
-        {/* Empty State */}
-        {filteredSkills.length === 0 && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="text-center py-20"
-          >
-            <div className="w-24 h-24 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-              <Code className="w-12 h-12 text-indigo-600" />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-700 mb-3">No Technologies Found</h3>
-            <p className="text-gray-500 max-w-md mx-auto">
-              No technologies match the selected category. Try exploring other categories.
-            </p>
-          </motion.div>
-        )}
-
-        {/* Skill Detail Modal - Fixed z-index and backdrop issues */}
+        {/* Skill Detail Modal - FIXED ICON RENDERING */}
         <AnimatePresence>
           {selectedSkill && (
             <motion.div
@@ -271,18 +262,26 @@ const Skills = ({ data = [] }) => {
                 initial={{ scale: 0.9, opacity: 0, y: 50 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 exit={{ scale: 0.9, opacity: 0, y: 50 }}
-                className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-100 relative z-60" // Increased z-index
+                className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-100 relative z-60"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="p-8">
-                  {/* Modal Header */}
+                  {/* Modal Header - FIXED ICON RENDERING */}
                   <div className="flex items-start gap-6 mb-8">
                     <motion.div
                       initial={{ scale: 0, rotate: -180 }}
                       animate={{ scale: 1, rotate: 0 }}
                       className="w-20 h-20 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0"
                     >
-                      <span className="text-3xl">{selectedSkill.icon}</span>
+                      {selectedSkill.icon.startsWith('http') ? (
+                        <img 
+                          src={selectedSkill.icon} 
+                          alt={selectedSkill.name}
+                          className="w-12 h-12 object-contain"
+                        />
+                      ) : (
+                        <span className="text-3xl">{selectedSkill.icon}</span>
+                      )}
                     </motion.div>
                     <div className="flex-1">
                       <h3 className="text-3xl font-bold text-gray-800 mb-2">{selectedSkill.name}</h3>
@@ -323,8 +322,6 @@ const Skills = ({ data = [] }) => {
                       ))}
                     </div>
                   </div>
-
-                 
 
                   {/* Close Button */}
                   <motion.button

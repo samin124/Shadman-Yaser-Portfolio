@@ -8,7 +8,7 @@ const portfolioData = {
     name: "Shadman Yaser", // Change to your name
     title: "Your Title", // Change to your title
     description: "CSE student skilled in full stack development, with interests in Machine Learning and Image Processing. Passionate about building intuitive web apps and exploring data driven solutions.", // Change to your description
-    image: "/assets/images/profilePort1.jpg", // Change to your photo path
+    image: "/assets/images/profile2.jpg", // Change to your photo path
     email: "shadmanyaser890@gmail.com", // Change to your email
     phone: "01622997885", // Change to your phone
     presentAddress: "Chattogram", // Change to your address
@@ -96,7 +96,7 @@ const portfolioData = {
       id: 6,
       title: "Ecommerce Sales Dashboard", // Change to your project name
       description: "An e-commerce sales dashboard that visualizes key business metrics such as revenue, orders, and product performance. Built to provide actionable insights through interactive charts and reports, helping businesses track and optimize their sales effectively.", // Change to your project description
-      image: "/assets/images/power2.png", // Change to your project image
+      image: "/assets/images/power2.jpg", // Change to your project image
       technologies: ["Power BI", "Microsoft Excel", "Data Cleaning"], // Change to your technologies
       githubUrl: "https://github.com/samin124/Ecommerce-Sales-Data-Analysis", // Change to GitHub URL
     }
@@ -108,7 +108,7 @@ const portfolioData = {
     {
       name: "JavaScript (Basic)",
       category: "Frontend",
-      icon: "🟨",
+      icon: "https://img.icons8.com/color/96/000000/javascript.png",
       experience: "Beginner",
       description: "Core programming language for web development",
       features: [
@@ -122,7 +122,7 @@ const portfolioData = {
     {
       name: "Laravel & PHP",
       category: "Backend",
-      icon: "🌿",
+      icon: "https://img.icons8.com/fluency/96/000000/laravel.png",
       experience: "Intermediate",
       description: "PHP framework for building robust web applications",
       features: [
@@ -136,7 +136,7 @@ const portfolioData = {
     {
       name: "Machine Learning & Deep Learning",
       category: "AI/ML",
-      icon: "🤖",
+      icon: "https://img.icons8.com/color/96/000000/artificial-intelligence.png",
       experience: "Intermediate",
       description: "Building intelligent models to learn from data",
       features: [
@@ -150,7 +150,7 @@ const portfolioData = {
     {
       name: "Image Processing",
       category: "AI/ML",
-      icon: "🖼️",
+      icon: "https://img.icons8.com/color/96/000000/image.png",
       experience: "Intermediate",
       description: "Techniques to analyze and manipulate images",
       features: [
@@ -164,7 +164,7 @@ const portfolioData = {
     {
       name: "Data Structures & Algorithms",
       category: "Programming",
-      icon: "📊",
+      icon: "https://img.icons8.com/color/96/000000/data-configuration.png",
       experience: "Intermediate",
       description: "Core concepts for efficient problem-solving and coding",
       features: [
@@ -177,7 +177,7 @@ const portfolioData = {
     {
       name: "Software Engineering",
       category: "Programming",
-      icon: "🛠️",
+      icon: "https://img.icons8.com/color/96/000000/source-code.png",
       experience: "Intermediate",
       description: "Principles and practices for developing high-quality software",
       features: [
@@ -190,7 +190,7 @@ const portfolioData = {
     {
       name: "Databases",
       category: "Programming",
-      icon: "💾",
+      icon: "https://img.icons8.com/color/96/000000/database.png",
       experience: "Intermediate",
       description: "Designing and managing data storage systems",
       features: [
@@ -203,7 +203,7 @@ const portfolioData = {
     {
       name: "Power BI",
       category: "Data Analytics",
-      icon: "📊",
+      icon: "https://img.icons8.com/color/96/000000/power-bi.png",
       experience: "Beginner",
       description: "Data visualization and business intelligence tool",
       features: [

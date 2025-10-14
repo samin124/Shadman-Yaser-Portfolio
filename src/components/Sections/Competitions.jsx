@@ -18,7 +18,7 @@ const CompetitionCard = memo(({ competition, index }) => (
       stiffness: 100
     }}
     viewport={{ once: true, margin: "-50px" }}
-    className="group relative bg-gradient-to-br from-white to-gray-50/80 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm"
+    className="group relative bg-gradient-to-br from-white to-gray-50/80 dark:from-gray-800 dark:to-gray-700/80 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-100/50 dark:border-gray-600/50 overflow-hidden backdrop-blur-sm"
   >
     {/* Gradient Overlay */}
     <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -68,7 +68,7 @@ const CompetitionCard = memo(({ competition, index }) => (
           </motion.div>
           
           {competition.teamSize && (
-            <div className="flex items-center text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+            <div className="flex items-center text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded-full">
               <Users className="w-3 h-3 mr-1" />
               {competition.teamSize}
             </div>
@@ -77,33 +77,33 @@ const CompetitionCard = memo(({ competition, index }) => (
         
         {/* Title */}
         <motion.h3 
-          className="text-xl font-bold text-gray-800 mb-3 line-clamp-2 group-hover:text-primary-600 transition-colors duration-300"
+          className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-3 line-clamp-2 group-hover:text-primary-600 transition-colors duration-300"
           whileHover={{ x: 2 }}
         >
           {competition.title}
         </motion.h3>
         
         {/* Description */}
-        <p className="text-gray-600 mb-4 text-sm leading-relaxed line-clamp-3">
+        <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed line-clamp-3">
           {competition.description}
         </p>
         
         {/* Metadata */}
         <div className="space-y-2 mb-4">
           <div className="flex items-center justify-between text-sm">
-            <div className="flex items-center space-x-2 text-gray-500">
+            <div className="flex items-center space-x-2 text-gray-500 dark:text-gray-400">
               <Calendar className="w-4 h-4" />
               <span>{competition.date}</span>
             </div>
             {competition.duration && (
-              <div className="flex items-center space-x-1 text-gray-500">
+              <div className="flex items-center space-x-1 text-gray-500 dark:text-gray-400">
                 <Clock className="w-3 h-3" />
                 <span className="text-xs">{competition.duration}</span>
               </div>
             )}
           </div>
           
-          <div className="text-xs text-gray-500 text-right font-medium">
+          <div className="text-xs text-gray-500 dark:text-gray-400 text-right font-medium">
             by {competition.organizer}
           </div>
         </div>
@@ -147,11 +147,11 @@ const Competitions = ({ data = [] }) => {
   const hasMoreCompetitions = visibleCompetitions < data.length
 
   return (
-    <section className="relative py-20 bg-gradient-to-br from-gray-50 via-white to-primary-50/30 overflow-hidden">
+    <section className="relative py-20 bg-gradient-to-br from-gray-50 via-white to-primary-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-primary-900/20 overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-200/20 via-transparent to-purple-200/20" />
-      <div className="absolute top-10 left-10 w-72 h-72 bg-primary-300/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-300/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-200/20 via-transparent to-purple-200/20 dark:from-primary-900/20 dark:to-purple-900/20" />
+      <div className="absolute top-10 left-10 w-72 h-72 bg-primary-300/10 dark:bg-primary-900/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-300/10 dark:bg-purple-900/20 rounded-full blur-3xl" />
       
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
@@ -171,10 +171,10 @@ const Competitions = ({ data = [] }) => {
             <Trophy className="w-10 h-10 text-white" />
           </motion.div>
           
-          <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-br from-gray-800 to-primary-600 bg-clip-text text-transparent mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-br from-gray-800 to-primary-600 dark:from-gray-100 dark:to-primary-400 bg-clip-text text-transparent mb-4">
             Competitions
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
             Showcasing my journey through hackathons and coding competitions
           </p>
         </motion.div>
@@ -195,11 +195,11 @@ const Competitions = ({ data = [] }) => {
               animate={{ opacity: 1, scale: 1 }}
               className="col-span-full text-center py-16"
             >
-              <div className="w-24 h-24 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <div className="w-24 h-24 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <Trophy className="w-12 h-12 text-gray-400" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-600 mb-2">Coming Soon</h3>
-              <p className="text-gray-500 max-w-md mx-auto">
+              <h3 className="text-2xl font-bold text-gray-600 dark:text-gray-300 mb-2">Coming Soon</h3>
+              <p className="text-gray-500 dark:text-gray-400 max-w-md mx-auto">
                 Competition achievements are being prepared. Stay tuned for exciting updates!
               </p>
             </motion.div>
@@ -223,7 +223,7 @@ const Competitions = ({ data = [] }) => {
                 </div>
               </motion.div>
 
-              <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
+              <div className="relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-2xl overflow-hidden border border-gray-100 dark:border-gray-600">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentCompetitionIndex}
@@ -249,32 +249,32 @@ const Competitions = ({ data = [] }) => {
                         </div>
                         {data[currentCompetitionIndex].position && (
                           <span className={`px-3 py-1 rounded-full text-xs font-bold shadow-lg ${
-                            data[currentCompetitionIndex].position.includes('1') ? 'bg-yellow-100 text-yellow-800' :
-                            data[currentCompetitionIndex].position.includes('2') ? 'bg-gray-100 text-gray-800' :
-                            data[currentCompetitionIndex].position.includes('3') ? 'bg-orange-100 text-orange-800' :
-                            'bg-blue-100 text-blue-800'
+                            data[currentCompetitionIndex].position.includes('1') ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-100' :
+                            data[currentCompetitionIndex].position.includes('2') ? 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100' :
+                            data[currentCompetitionIndex].position.includes('3') ? 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-100' :
+                            'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100'
                           }`}>
                             {data[currentCompetitionIndex].position}
                           </span>
                         )}
                       </div>
                       
-                      <h3 className="text-xl font-bold text-gray-800 mb-3">
+                      <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-3">
                         {data[currentCompetitionIndex].title}
                       </h3>
                       
-                      <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                      <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">
                         {data[currentCompetitionIndex].description}
                       </p>
                       
                       <div className="space-y-2 mb-4">
-                        <div className="flex items-center justify-between text-sm text-gray-500">
+                        <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
                           <div className="flex items-center space-x-2">
                             <Calendar className="w-4 h-4" />
                             <span>{data[currentCompetitionIndex].date}</span>
                           </div>
                         </div>
-                        <div className="text-xs text-gray-500 text-right font-medium">
+                        <div className="text-xs text-gray-500 dark:text-gray-400 text-right font-medium">
                           by {data[currentCompetitionIndex].organizer}
                         </div>
                       </div>
@@ -294,16 +294,16 @@ const Competitions = ({ data = [] }) => {
                   </motion.div>
                 </AnimatePresence>
 
-                {/* Navigation Controls */}
+                {/* Navigation Controls - FIXED FOR DARK THEME */}
                 <div className="flex justify-between items-center px-6 pb-6">
                   <motion.button
                     onClick={prevCompetition}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className="p-3 rounded-xl bg-white shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300 touch-manipulation"
+                    className="p-3 rounded-xl bg-white dark:bg-gray-700 shadow-lg hover:shadow-xl border border-gray-100 dark:border-gray-600 transition-all duration-300 touch-manipulation"
                     aria-label="Previous competition"
                   >
-                    <ChevronLeft className="w-5 h-5" />
+                    <ChevronLeft className="w-5 h-5 text-gray-700 dark:text-gray-300" />
                   </motion.button>
                   
                   {/* Dots Indicator */}
@@ -317,7 +317,7 @@ const Competitions = ({ data = [] }) => {
                         className={`w-2 h-2 rounded-full transition-all duration-300 touch-manipulation ${
                           index === currentCompetitionIndex 
                             ? 'bg-gradient-to-r from-primary-500 to-purple-600 w-6' 
-                            : 'bg-gray-300'
+                            : 'bg-gray-300 dark:bg-gray-600'
                         }`}
                         aria-label={`Go to competition ${index + 1}`}
                       />
@@ -328,10 +328,10 @@ const Competitions = ({ data = [] }) => {
                     onClick={nextCompetition}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className="p-3 rounded-xl bg-white shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300 touch-manipulation"
+                    className="p-3 rounded-xl bg-white dark:bg-gray-700 shadow-lg hover:shadow-xl border border-gray-100 dark:border-gray-600 transition-all duration-300 touch-manipulation"
                     aria-label="Next competition"
                   >
-                    <ChevronRight className="w-5 h-5" />
+                    <ChevronRight className="w-5 h-5 text-gray-700 dark:text-gray-300" />
                   </motion.button>
                 </div>
               </div>
@@ -342,7 +342,7 @@ const Competitions = ({ data = [] }) => {
                 animate={{ opacity: 1 }}
                 className="text-center mt-4"
               >
-                <p className="text-sm text-gray-600 font-medium">
+                <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">
                   {currentCompetitionIndex + 1} of {data.length}
                 </p>
               </motion.div>
@@ -353,10 +353,10 @@ const Competitions = ({ data = [] }) => {
               animate={{ opacity: 1, scale: 1 }}
               className="text-center py-12"
             >
-              <div className="w-20 h-20 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <div className="w-20 h-20 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <Trophy className="w-10 h-10 text-gray-400" />
               </div>
-              <p className="text-gray-500">Competition information coming soon...</p>
+              <p className="text-gray-500 dark:text-gray-400">Competition information coming soon...</p>
             </motion.div>
           )}
         </div>
@@ -394,10 +394,10 @@ const Competitions = ({ data = [] }) => {
               
               {/* Progress indicator */}
               <div className="mt-6 text-center">
-                <p className="text-sm text-gray-600 font-medium mb-2">
+                <p className="text-sm text-gray-600 dark:text-gray-400 font-medium mb-2">
                   Showing {visibleCompetitions} of {data.length} competitions
                 </p>
-                <div className="w-48 mx-auto bg-gray-200 rounded-full h-2 shadow-inner">
+                <div className="w-48 mx-auto bg-gray-200 dark:bg-gray-700 rounded-full h-2 shadow-inner">
                   <motion.div
                     className="bg-gradient-to-r from-primary-500 to-purple-600 h-2 rounded-full shadow-lg"
                     initial={{ width: 0 }}
@@ -417,7 +417,7 @@ const Competitions = ({ data = [] }) => {
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="mt-8 hidden lg:flex items-center justify-center gap-3 text-primary-600 font-semibold"
+            className="mt-8 hidden lg:flex items-center justify-center gap-3 text-primary-600 dark:text-primary-400 font-semibold"
           >
             <Sparkles className="w-5 h-5" />
             <span>All competitions loaded!</span>

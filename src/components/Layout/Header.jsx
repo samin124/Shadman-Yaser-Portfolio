@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Code2 } from 'lucide-react'
+import ThemeSwitcher from '../ThemeSwitcher' // Add this import
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -70,7 +71,7 @@ const Header = () => {
 
   return (
     <header 
-      className="fixed top-0 left-0 right-0 z-50 bg-slate-900 border-b border-white/10 shadow-lg w-full"
+      className="fixed top-0 left-0 right-0 z-50 theme-bg-primary theme-border border-b shadow-lg w-full transition-colors duration-300"
       style={{
         backdropFilter: 'blur(10px)',
         WebkitBackdropFilter: 'blur(10px)',
@@ -88,11 +89,11 @@ const Header = () => {
             whileTap={{ scale: 0.95 }}
           >
             <Code2 className="w-6 h-6 text-blue-400" />
-            <span className="text-lg font-bold text-white whitespace-nowrap">Portfolio</span>
+            <span className="text-lg font-bold theme-text-primary whitespace-nowrap">Portfolio</span>
           </motion.button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1 flex-shrink-0">
+          {/* Desktop Navigation + Theme Switcher */}
+          <div className="hidden lg:flex items-center space-x-2 flex-shrink-0">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
@@ -107,26 +108,38 @@ const Header = () => {
                 className={`px-3 py-2 rounded-lg font-medium transition-all duration-200 text-sm whitespace-nowrap flex-shrink-0 ${
                   activeSection === item.id
                     ? 'bg-blue-600 text-white shadow-lg'
-                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    : 'theme-text-secondary hover:theme-text-primary hover:bg-white/10'
                 }`}
               >
                 {item.name}
               </motion.button>
             ))}
+            
+            {/* Theme Switcher - Added here */}
+            <div className="ml-2">
+              <ThemeSwitcher />
+            </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <motion.button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isMobileMenuOpen}
-            title="Navigation Menu"
-            className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors bg-white/10 rounded-lg border border-white/10 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500 flex-shrink-0"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </motion.button>
+          {/* Mobile Menu Button + Theme Switcher */}
+          <div className="flex items-center space-x-2 lg:hidden">
+            {/* Theme Switcher for mobile */}
+            <div className="mr-2">
+              <ThemeSwitcher />
+            </div>
+            
+            <motion.button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
+              title="Navigation Menu"
+              className="p-2 theme-text-secondary hover:theme-text-primary transition-colors bg-white/10 rounded-lg border theme-border hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500 flex-shrink-0"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </motion.button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -136,7 +149,7 @@ const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-slate-800 mt-3 rounded-lg border border-white/10 shadow-xl overflow-hidden w-full"
+              className="lg:hidden theme-bg-secondary theme-border border mt-3 rounded-lg shadow-xl overflow-hidden w-full"
             >
               <div className="py-2 w-full">
                 {navItems.map((item, index) => (
@@ -149,10 +162,10 @@ const Header = () => {
                     onClick={() => scrollToSection(item.id)}
                     aria-label={`Scroll to ${item.name} section`}
                     title={item.name}
-                    className={`block w-full text-left px-4 py-3 text-base font-medium transition-all duration-200 border-b border-white/5 last:border-b-0 whitespace-nowrap ${
+                    className={`block w-full text-left px-4 py-3 text-base font-medium transition-all duration-200 border-b theme-border last:border-b-0 whitespace-nowrap ${
                       activeSection === item.id
                         ? 'bg-blue-600 text-white'
-                        : 'text-gray-300 hover:text-white hover:bg-white/10'
+                        : 'theme-text-secondary hover:theme-text-primary hover:bg-white/10'
                     }`}
                   >
                     {item.name}

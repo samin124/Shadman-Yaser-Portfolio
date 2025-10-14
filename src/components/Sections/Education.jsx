@@ -1,8 +1,82 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { GraduationCap, Award, BookOpen, Clock, MapPin, Star, Zap } from 'lucide-react'
+import { GraduationCap, Award, BookOpen, Clock, MapPin, Star, Zap, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const Education = ({ data = [] }) => {
+  const [currentPage, setCurrentPage] = useState(1)
+  const [isMobile, setIsMobile] = useState(false)
+  const educationsPerPage = 1 // Show 1 education per page on mobile
+
+  // Handle responsive behavior
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  // Responsive education display
+  const displayedEducations = isMobile 
+    ? data.slice((currentPage - 1) * educationsPerPage, currentPage * educationsPerPage)
+    : data
+
+  const totalPages = Math.ceil(data.length / educationsPerPage)
+
+  // Pagination functions
+  const goToPage = (pageNumber) => {
+    setCurrentPage(pageNumber)
+  }
+
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(prev => prev + 1)
+    }
+  }
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(prev => prev - 1)
+    }
+  }
+
+  // Generate page numbers for pagination
+  const getPageNumbers = () => {
+    const pageNumbers = []
+    const maxVisiblePages = 3
+    
+    if (totalPages <= maxVisiblePages) {
+      for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(i)
+      }
+    } else {
+      if (currentPage <= 2) {
+        for (let i = 1; i <= 3; i++) {
+          pageNumbers.push(i)
+        }
+        if (totalPages > 3) pageNumbers.push('...')
+        pageNumbers.push(totalPages)
+      } else if (currentPage >= totalPages - 1) {
+        pageNumbers.push(1)
+        pageNumbers.push('...')
+        for (let i = totalPages - 2; i <= totalPages; i++) {
+          pageNumbers.push(i)
+        }
+      } else {
+        pageNumbers.push(1)
+        pageNumbers.push('...')
+        pageNumbers.push(currentPage)
+        pageNumbers.push('...')
+        pageNumbers.push(totalPages)
+      }
+    }
+    
+    return pageNumbers
+  }
+
   // Function to determine honors based on program type
   const getHonorsLevel = (degree) => {
     const lowerDegree = degree.toLowerCase();
@@ -61,10 +135,19 @@ const Education = ({ data = [] }) => {
           <p className="text-lg sm:text-xl text-purple-200">Where knowledge meets innovation</p>
         </motion.div>
 
+        {/* Education Count - Only show on mobile */}
+        {isMobile && data.length > 0 && (
+          <div className="text-center mb-6">
+            <p className="text-purple-300 text-sm">
+              Page {currentPage} of {totalPages} • {data.length} education{data.length !== 1 ? 's' : ''}
+            </p>
+          </div>
+        )}
+
         <div className="max-w-7xl mx-auto">
           {data.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
-              {data.map((edu, index) => {
+              {displayedEducations.map((edu, index) => {
                 const honorsLevel = getHonorsLevel(edu.degree);
                 const programSkills = getProgramSkills(edu.degree, edu.description);
                 
@@ -202,7 +285,77 @@ const Education = ({ data = [] }) => {
           )}
         </div>
 
-        
+        {/* Pagination Controls - Only show on mobile when multiple pages exist */}
+        {isMobile && totalPages > 1 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col items-center gap-4 mt-8"
+          >
+            {/* Pagination Buttons */}
+            <div className="flex items-center gap-2">
+              {/* Previous Button */}
+              <motion.button
+                onClick={prevPage}
+                disabled={currentPage === 1}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 backdrop-blur-lg border ${
+                  currentPage === 1
+                    ? 'bg-white/5 text-gray-500 cursor-not-allowed border-white/10'
+                    : 'bg-white/10 text-purple-300 hover:bg-white/20 border-white/20'
+                }`}
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </motion.button>
+
+              {/* Page Numbers */}
+              <div className="flex items-center gap-1">
+                {getPageNumbers().map((pageNumber, index) => (
+                  <React.Fragment key={index}>
+                    {pageNumber === '...' ? (
+                      <span className="px-2 py-1 text-purple-300">...</span>
+                    ) : (
+                      <motion.button
+                        onClick={() => goToPage(pageNumber)}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className={`w-8 h-8 rounded-lg transition-all duration-300 font-medium text-sm backdrop-blur-lg border ${
+                          currentPage === pageNumber
+                            ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg border-purple-500'
+                            : 'bg-white/5 text-purple-300 hover:bg-white/10 border-white/10'
+                        }`}
+                      >
+                        {pageNumber}
+                      </motion.button>
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
+
+              {/* Next Button */}
+              <motion.button
+                onClick={nextPage}
+                disabled={currentPage === totalPages}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 backdrop-blur-lg border ${
+                  currentPage === totalPages
+                    ? 'bg-white/5 text-gray-500 cursor-not-allowed border-white/10'
+                    : 'bg-white/10 text-purple-300 hover:bg-white/20 border-white/20'
+                }`}
+              >
+                <ChevronRight className="w-4 h-4" />
+              </motion.button>
+            </div>
+
+            {/* Page Info */}
+            <div className="text-xs text-purple-300 text-center">
+              Education {Math.min((currentPage - 1) * educationsPerPage + 1, data.length)} of {data.length}
+            </div>
+          </motion.div>
+        )}
       </div>
     </section>
   )

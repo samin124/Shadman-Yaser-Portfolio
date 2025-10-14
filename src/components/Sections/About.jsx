@@ -107,10 +107,10 @@ const About = ({ data }) => {
               className="grid grid-cols-2 gap-4 mb-8"
             >
               {[
-                { value: 'Quality', desc: 'Pixel perfect execution' },
-                { value: 'Innovation', desc: 'Cutting edge solutions' },
-                { value: 'Collaboration', desc: 'Team oriented approach' },
-                { value: 'Growth', desc: 'Continuous improvement' }
+                { value: 'Excellence', desc: 'Strive for clean code and best practices' },
+                { value: 'Innovation', desc: 'Bring fresh perspectives and ideas' },
+                { value: 'Teamwork', desc: 'Work effectively in collaborative environments' },
+                { value: 'Development', desc: 'Constantly expanding my skill set' }
               ].map((item, index) => (
                 <motion.div
                   key={item.value}
