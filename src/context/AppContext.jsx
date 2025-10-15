@@ -16,7 +16,7 @@ const portfolioData = {
     availability: "Anytime", // Change to your availability
     github: "https://github.com/samin124", // Change to your GitHub
     linkedin: "https://www.linkedin.com/in/shadman-yaser-909710244/", // Change to your LinkedIn
-    resumeUrl: "/assets/images/ShadmanYaserCVv2.pdf" // Change to your resume URL
+    resumeUrl: "/assets/images/Shadman Yaser CV 5.pdf" // Change to your resume URL
   },
   education: [
     {
@@ -112,11 +112,13 @@ const portfolioData = {
       experience: "Beginner",
       description: "Core programming language for web development",
       features: [
-        "Variables, Data Types & Operators",
-        "Functions & Control Flow",
-        "DOM Manipulation Basics",
-        "Event Handling",
-        "Integration with HTML/CSS"
+        "ES6+ Syntax (Arrow functions, Template literals)",
+        "DOM Manipulation & Traversal",
+        "Event Listeners & Handlers",
+        "Basic Async Programming (Callbacks, Promises)",
+        "Array Methods (map, filter, reduce)",
+        "Form Validation & Handling",
+        "Browser Storage (LocalStorage, SessionStorage)"
       ]
     },
     {
@@ -126,11 +128,16 @@ const portfolioData = {
       experience: "Intermediate",
       description: "PHP framework for building robust web applications",
       features: [
-        "MVC Architecture",
-        "Routing & Middleware",
-        "Eloquent ORM & Database Interaction",
-        "Authentication & Authorization",
-        "Object-Oriented Programming (OOP)"
+        "MVC Architecture Implementation",
+        "RESTful API Development",
+        "Eloquent ORM & Database Relationships",
+        "Middleware & Request Validation",
+        "Authentication & Authorization Systems",
+        "Blade Templating Engine",
+        "Artisan CLI & Migrations",
+        "Service Providers & Dependency Injection",
+        "Queue & Job Processing",
+        "Testing with PHPUnit"
       ]
     },
     {
@@ -140,11 +147,13 @@ const portfolioData = {
       experience: "Intermediate",
       description: "Building intelligent models to learn from data",
       features: [
-        "Data Preprocessing & Feature Engineering",
-        "Model Training & Evaluation",
-        "Supervised & Unsupervised Learning",
-        "Neural Networks & CNNs",
-        "Image Classification & Object Detection"
+        "Supervised Learning (Regression, Classification)",
+        "Neural Networks & Deep Learning Architectures",
+        "Convolutional Neural Networks (CNNs)",
+        "Model Evaluation & Hyperparameter Tuning",
+        "Transfer Learning & Fine-tuning",
+        "TensorFlow/PyTorch Framework Usage",
+        "Natural Language Processing (NLP)",
       ]
     },
     {
@@ -154,11 +163,16 @@ const portfolioData = {
       experience: "Intermediate",
       description: "Techniques to analyze and manipulate images",
       features: [
-        "Image Enhancement & Filtering",
-        "Edge Detection & Contour Analysis",
-        "Color Space Conversion",
-        "Feature Extraction",
-        "Integration with ML Models"
+        "Image Filtering & Enhancement",
+        "Edge Detection & Feature Extraction",
+        "Image Segmentation & Object Detection",
+        "Morphological Operations",
+        "Color Space Transformations",
+        "Image Registration & Alignment",
+        "Noise Reduction & Restoration",
+        "Template Matching & Pattern Recognition",
+        "OpenCV Library Proficiency",
+        "Real-time Video Processing"
       ]
     },
     {
@@ -168,10 +182,15 @@ const portfolioData = {
       experience: "Intermediate",
       description: "Core concepts for efficient problem-solving and coding",
       features: [
-        "Arrays, Linked Lists, Stacks, Queues",
-        "Trees & Graphs",
-        "Sorting & Searching Algorithms",
-        "Time & Space Complexity Analysis"
+        "Arrays, Strings & Linked Lists",
+        "Stacks, Queues & Deques",
+        "Trees (Binary, BST, AVL, Trie)",
+        "Graphs & Graph Algorithms (BFS, DFS)",
+        "Hash Tables & Hashing Techniques",
+        "Sorting Algorithms (QuickSort, MergeSort, HeapSort)",
+        "Searching Algorithms (Binary Search)",
+        "Greedy Algorithms & Backtracking",
+        "Complexity Analysis (Big O, Time/Space)"
       ]
     },
     {
@@ -181,10 +200,15 @@ const portfolioData = {
       experience: "Intermediate",
       description: "Principles and practices for developing high-quality software",
       features: [
+        "Agile & Scrum Methodologies",
         "Software Development Life Cycle (SDLC)",
-        "Requirement Analysis & Design",
-        "Version Control & Documentation",
-        "Testing & Debugging"
+        "Requirements Analysis & Specification",
+        "System Design & Architecture Patterns",
+        "Version Control (Git & GitHub)",
+        "Testing Strategies (Unit, Integration, E2E)",
+        "Debugging & Performance Optimization",
+        "Code Review & Quality Assurance",
+        "Documentation & Technical Writing"
       ]
     },
     {
@@ -194,10 +218,15 @@ const portfolioData = {
       experience: "Intermediate",
       description: "Designing and managing data storage systems",
       features: [
-        "SQL & Relational Databases (MySQL, MariaDB)",
-        "Database Design & Normalization",
-        "CRUD Operations & Queries",
-        "Basic NoSQL Concepts"
+        "Relational Database Design (MySQL, MariaDB)",
+        "SQL Query Optimization & Indexing",
+        "Database Normalization & Denormalization",
+        "ACID Properties & Transaction Management",
+        "Stored Procedures & Functions",
+        "Data Modeling & ER Diagrams",
+        "Backup & Recovery Strategies",
+        "Database Security & Access Control",
+        "ORM Integration & Management"
       ]
     },
     {
@@ -207,10 +236,16 @@ const portfolioData = {
       experience: "Beginner",
       description: "Data visualization and business intelligence tool",
       features: [
-        "Interactive Dashboards",
-        "Data Modeling & Transformation",
-        "Reports & Visual Analytics",
-        "Integration with Databases & Excel"
+        "Interactive Dashboard Creation",
+        "Data Modeling & Relationship Management",
+        "DAX Formulas & Calculations",
+        "Power Query for Data Transformation",
+        "Custom Visualizations & Themes",
+        "Report Publishing & Sharing",
+        "Data Source Integration (SQL, Excel, APIs)",
+        "Row-Level Security Implementation",
+        "Performance Optimization Techniques",
+        "Advanced Analytics & AI Insights"
       ]
     }
   ],
