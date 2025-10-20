@@ -53,7 +53,7 @@ const portfolioData = {
       id: 1,
       title: "AstroAware", // Change to your project name
       description: "Designed and built an interactive impact simulator that turns live asteroid data into actionable insights.Integrated NASA NeoWs and Sentry APIs, the Wolfram Meteorite Landings dataset, and USGS hazard/population data to estimate impact energy, earthquake and tsunami effects, and map regional exposure (focused on Bangladesh). Implemented robust API integration and backend physics calculations, dynamic PDF briefing generation, and a real-time alert system that issues email notifications when an object becomes hazardous. On the frontend, created hover driven maps,risk rings, mitigation strategy guides and interactive learning features (quizzes, gallery and asteroid defense game) to increase public awareness and preparedness.", // Change to your project description
-      image: "/public/assets/images/astroaware.jpg", // Change to your project image
+      image: "/assets/images/astroaware.jpg", // Change to your project image
       technologies: ["html", "Javascript", "Tailwind CSS","Node.JS"], // Change to your technologies
       liveUrl: "https://nasa-project-2025.onrender.com/", // Change to live demo URL
       githubUrl: "https://github.com/samin124/AstroAware-2025", // Change to GitHub URl
@@ -62,7 +62,7 @@ const portfolioData = {
       id: 2,
       title: "Krishi.net",
       description: "A user-friendly farming platform designed for rural Bangladeshi users, built with Tailwind CSS for a responsive and intuitive interface. The platform provides accessible tools and information to support local farmers in managing their agricultural activities effectively.",
-      image: "/public/assets/images/krishiImage.jpg",
+      image: "/assets/images/krishiImage.jpg",
       technologies: ["html", "CSS", "Tailwind CSS"],
       liveUrl: "https://samin124.github.io/krishi.net/",
       githubUrl: "https://github.com/samin124/krishi.net",
@@ -71,7 +71,7 @@ const portfolioData = {
       id: 3,
       title: "Banana Ripeness Detection", // Change to your project name
       description: "Flask app allowing image upload and graph based visualization of banana classes", // Change to your project description
-      image: "/public/assets/images/banana.jpg", // Change to your project image
+      image: "/assets/images/banana.jpg", // Change to your project image
       technologies: ["Python", "Flask", "Machine Learning"], // Change to your technologies
       liveUrl: "https://banana-ripeness-detection-2-tdt8.onrender.com/",
       githubUrl: "https://github.com/samin124/Banana-Ripeness-Detection",
@@ -295,7 +295,7 @@ const portfolioData = {
       organizer: "AUST Innovation and Design Club.",
       position: "Final Round",
       certificateUrl: "https://drive.google.com/file/d/1-nA3NPCFnSIWodLljbi_C8c06-yFgJxC/view",
-      image: "/public/assets/images/aust.jpg"
+      image: "/assets/images/aust.jpg"
     },
     {
       id: 3,
@@ -313,7 +313,7 @@ const portfolioData = {
       organizer: " Chittagong Science Carnival 4.0 (CUSS)",
       position: "Final Round",
       certificateUrl: "https://drive.google.com/file/d/1blzHQRx7LXUj3fEEgpZmB2HTpe6XyOTW/view",
-      image: "/public/assets/images/cu.jpg"
+      image: "/assets/images/cu.jpg"
     }
     // Add more competitions as needed
   ],
