@@ -16,7 +16,7 @@ const portfolioData = {
     availability: "Anytime", // Change to your availability
     github: "https://github.com/samin124", // Change to your GitHub
     linkedin: "https://www.linkedin.com/in/shadman-yaser-909710244/", // Change to your LinkedIn
-    resumeUrl: "/assets/images/Shadman Yaser CV 5.pdf" // Change to your resume URL
+    resumeUrl: "/assets/images/shadmanCV.pdf" // Change to your resume URL
   },
   education: [
     {

@@ -18,11 +18,12 @@ const Hero = ({ data }) => {
   ]
 
   const techStack = [
-    { icon: <Code className="w-6 h-6" />, name: "MERN & Flask Stack", color: "from-blue-500 to-cyan-500" },
-    { icon: <Server className="w-6 h-6" />, name: "Laravel & RESTful APIs", color: "from-green-500 to-emerald-500" },
-    { icon: <Cpu className="w-6 h-6" />, name: "Machine & Deep Learning", color: "from-yellow-500 to-amber-500" },
-    { icon: <Palette className="w-6 h-6" />, name: "Image Processing & AI Solutions", color: "from-purple-500 to-pink-500" }
+    { icon: <Code className="w-6 h-6" />, name: "Exploring MERN & Flask Stack", color: "from-blue-500 to-cyan-500" },
+    { icon: <Server className="w-6 h-6" />, name: "Learning Laravel & RESTful APIs", color: "from-green-500 to-emerald-500" },
+    { icon: <Cpu className="w-6 h-6" />, name: "Interested in Machine & Deep Learning", color: "from-yellow-500 to-amber-500" },
+    { icon: <Palette className="w-6 h-6" />, name: "Eager to Learn Image Processing & AI Solutions", color: "from-purple-500 to-pink-500" }
   ];
+  
   
 
   // Animated text rotation
