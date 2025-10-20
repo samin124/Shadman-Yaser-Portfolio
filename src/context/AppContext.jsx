@@ -286,7 +286,7 @@ const portfolioData = {
       organizer: "International Islamic University Chittagong", // Change to organizer
       position: "2nd Place", // Change to your position
       certificateUrl:"https://drive.google.com/file/d/1SOvT79s5bw1Digsfc3IqjcqfR-p_7gLX/view", // Change to certificate URL
-      image: "/public/assets/images/hult3.jpg" // Change to image
+      image: "/assets/images/hult3.jpg" // Change to image
     },
     {
       id: 2,
@@ -304,7 +304,7 @@ const portfolioData = {
       organizer: "Brain Station23 and Poridhi.io.",
       position: "Participant",
       certificateUrl: "https://drive.google.com/file/d/1V2VEp5PjvtYGv2sgP6JWa0MAYunie60d/view",
-      image: "/public/assets/images/brainHack.jpeg"
+      image: "/assets/images/brainHack.jpeg"
     },
     {
       id: 4,
